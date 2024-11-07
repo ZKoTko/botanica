@@ -2240,6 +2240,13 @@ footer {
     .sale-section-1 {
         width: auto;
     }
+    .main-banner-img1 {
+        width: 100%;
+    }
+    .banner-slide-dec1-1 {
+        left: 0%;
+        top: 17%;
+    }
 }
 @media only screen and (max-width: 1360px) {
     .nav-container {
