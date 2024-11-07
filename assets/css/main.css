@@ -53,6 +53,9 @@ header {
 main {
     position: relative;
 }
+.hidden-element {
+    opacity: 0;
+}
 .scroll-to-top {
     width: 45px;
     height: 50px;
@@ -816,6 +819,8 @@ main {
 }
 .menu-section {
     margin-bottom: 64px;
+    z-index: 1;
+    position: relative;
 }
 .our-menu-slide {
    padding: 0 15px;
