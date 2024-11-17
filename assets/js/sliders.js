@@ -51,6 +51,7 @@ $(document).ready(function(){
         slidesToScroll: 1
     });
 });
+
 $(document).ready(function(){
     $('.blog-slider').slick({
         dots: false,
@@ -74,4 +75,30 @@ $(document).ready(function(){
               }
           ]
     });
+});
+
+$(document).ready(function(){
+  $('.shop-page-banner-slider').slick({
+      dots: false,
+      arrows: true,
+      infinite: false,
+      slidesToShow: 4,
+      slidesToScroll: 1,
+      responsive: [
+        {
+          breakpoint: 1200,
+          settings: {
+            slidesToShow: 3,
+            slidesToScroll: 1
+          }
+        },
+        {
+            breakpoint: 768,
+            settings: {
+              slidesToShow: 2,
+              slidesToScroll: 1
+            }
+          }
+      ]
+  });
 });
