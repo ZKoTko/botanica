@@ -2,6 +2,7 @@ $(document).ready(function(){
     $('.menu-product-slider').slick({
         dots: true,
         infinite: true,
+        arrows: false,
         slidesToShow: 1,
         slidesToScroll: 1,
     });
@@ -86,19 +87,31 @@ $(document).ready(function(){
       slidesToScroll: 1,
       responsive: [
         {
-          breakpoint: 1200,
+          breakpoint: 1300,
           settings: {
             slidesToShow: 3,
             slidesToScroll: 1
           }
         },
         {
+          breakpoint: 992,
+          settings: {
+            arrows: false,
+            slidesToShow: 2,
+            slidesToScroll: 1
+          }
+        },
+        {
             breakpoint: 768,
             settings: {
+              arrows: false,
               slidesToShow: 2,
               slidesToScroll: 1
             }
-          }
+        }
       ]
   });
 });
+
+
+

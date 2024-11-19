@@ -157,3 +157,36 @@ searchButton.addEventListener('click', () => {
 
 // Клик на кнопку закрытия поиска
 closeSearchButton.addEventListener('click', closeSearchMenu);
+
+
+
+
+
+// Сайд меню filters
+
+document.addEventListener("DOMContentLoaded", () => {
+    const opener = document.querySelector("#mob-shop-filters-opener");
+    const sideMenu = document.querySelector(".shop-filters-side-menu");
+    const filter = document.querySelector(".shop-filters-side-menu-filter");
+    const body = document.body;
+    const html = document.documentElement;
+    const mobNav = document.querySelector(".mob-nav");
+
+    opener.addEventListener("click", () => {
+        sideMenu.classList.add("open");
+        filter.classList.add("visible");
+        body.classList.add("no-scroll");
+        html.classList.add("no-scroll");
+        if (mobNav) mobNav.style.display = "none"; // Скрываем .mob-nav
+    });
+
+    filter.addEventListener("click", () => {
+        sideMenu.classList.remove("open");
+        filter.classList.remove("visible");
+        body.classList.remove("no-scroll");
+        html.classList.remove("no-scroll");
+        if (mobNav) mobNav.style.display = ""; // Восстанавливаем отображение .mob-nav
+    });
+});
+
+

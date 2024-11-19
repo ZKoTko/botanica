@@ -42,6 +42,13 @@
     font-style: normal;
 }
 /*Global*/
+a {
+    transition: .3s;
+    text-decoration: none;
+}
+a:hover {
+    color: #01693a !important;
+}
 html {
     overflow-x: hidden !important;
 }

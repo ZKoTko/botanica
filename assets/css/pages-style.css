@@ -1,6 +1,31 @@
 main {
     padding-top: 82px;
 }
+.page-breadcrumbs {
+    display: flex;
+    align-items: center;
+    padding: 30px 0;
+    flex-wrap: wrap;
+}
+.page-breadcrumbs a {
+    font-size: 12px;
+    color: #222222;
+    text-decoration: none;
+    margin-right: 10px;
+    transition: .3s;
+}
+.page-breadcrumbs a:hover {
+    color: #01693a;
+}
+.page-breadcrumbs i {
+    color: #222222;
+    font-size: 9px;
+    margin-right: 10px;
+}
+.page-breadcrumbs span {
+    font-size: 12px;
+    color: #222222;
+}
 .main-nav-scroll {
     transform: translateY(0);
 }
@@ -94,7 +119,6 @@ main {
 .shop-page-banner-slider .slick-prev, .slick-next {
     width: 50px;
     height: 50px;
-    background-color: #fff;
     background: #fff;
     border: 1px solid #ececec;
     box-shadow: 3px 4px 8px 0 #0000001a;
@@ -602,6 +626,8 @@ input[type="range"]:active::-webkit-slider-thumb{
 .organic-swiper-slide-image img {
     max-height: 100%;
     margin: 0 auto;
+    left: 50%;
+    transform: translateX(-50%);
 }
 .shop-items-col {
     margin-bottom: 32px;
@@ -688,7 +714,66 @@ input[type="range"]:active::-webkit-slider-thumb{
     color: #fff;
     background-color: #01693a;
 }
-
+.shop-items-col.col-6 .organic-swiper-slide-image {
+    height: 460px;
+}
+.shop-items-col.col-12 .organic-swiper-slide-wrapper{
+    display: flex;
+}
+.shop-items-col.col-12 .organic-swiper-slide-image {
+    max-width: 300px;
+}
+.shop-items-col.col-12 .organic-swiper-slide {
+    padding-bottom: 0;
+}
+.shop-items-col.col-12 .menu-product-slide-text {
+    margin-top: 30px;
+    flex-grow: 1;
+    padding-right: 64px;
+}
+.menu-product-slide-text-long {
+    display: none;
+    padding-top: 16px;
+}
+.menu-product-slide-text-long p {
+    font-size: 14px;
+    color: #434343;
+}
+.shop-items-col.col-12 .menu-product-slide-text-long {
+    display: block;
+}
+.shop-items-col.col-12 .organic-slide-button {
+    display: none;
+}
+.menu-product-slide-text-long .organic-slide-button{
+    display: flex !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    position: relative;
+    top: unset;
+    bottom: unset;
+    right: unset;
+    left: unset;
+    margin-right: 12px;
+}
+.menu-product-long-text-buttons-wrapper {
+    position: relative;
+    display: flex;
+    margin-top: 24px;
+}
+.menu-product-long-text-buttons-wrapper .organic-slide-tooltip {
+    right: unset;
+    top: -44px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.menu-product-long-text-buttons-wrapper .organic-slide-tooltip::after {
+    left: 50%;
+    margin-left: -3px;
+    margin-top: -2px;
+    top: 100%;
+    transform: rotate(90deg);
+}
 
 /*Shop tags section*/
 .shop-tags-section {
@@ -730,10 +815,156 @@ input[type="range"]:active::-webkit-slider-thumb{
     color: #fff;
     background-color: #01693a;
 }
+.organic-slide-button i {
+    z-index: 1;
+}
+.organic-slide-button::before {
+    z-index: unset;
+}
+
+/*Filters side menu*/
+.shop-filters-side-menu {
+    position: fixed;
+    top: 0px;
+    left: -100%; /* Начальное положение меню за экраном */
+    width: 320px; /* Ширина меню */
+    height: 100vh;
+    background-color: #fff;
+    transition: all 0.2s ease;
+    z-index: 1000;
+    overflow-y: auto; /* Содержимое меню можно прокручивать */
+}
+.shop-filters-side-menu.open {
+    left: 0px; /* Меню выезжает справа */
+}
+.shop-filters-side-menu-filter{
+    display: none;
+    position: absolute;
+    top: 0px;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: #2f2f2f;
+    opacity: 0;
+    z-index: 999;
+
+    height: 100000vh;
+    transition: opacity 0.3s ease; 
+}
+.shop-filters-side-menu-filter.visible {
+    display: block; /* Показываем фильтр */
+    opacity: 0.6; /* Устанавливаем непрозрачность */
+}
+.shop-filters-side-menu-content {
+    padding: 40px 20px;
+}
 
 
+
+
+
+
+
+@media only screen and (max-width: 1300px) {
+    main {
+        padding-top: 0px;
+    }
+    .shop-page-banner-slider {
+        margin: 0 auto;
+        max-width: 80%;
+    }
+}
 @media only screen and (max-width: 1200px) {
     main {
         padding-top: 0px;
+    }
+    .shop-filter-accordions-wrapper {
+        display: none;
+    }
+    .shop-filters-side-menu-content .shop-filter-accordions-wrapper {
+        display: block;
+    }
+    .accordion-item {
+        border: 0 !important;
+        border-top: 1px solid #e5e7eb !important;
+        border-radius: 0 !important;
+    }
+    .accordion-item-header {
+        padding: 0;
+    }
+    .accordion-item {
+        margin-bottom: 0 !important;
+    }
+    .accordion-item:first-child {
+        border-top: 0 !important;
+    }
+    .accordion-item-header.active::after {
+        display: none;
+    }
+    .accordion-item-body-content {
+        padding: 24px 0;
+        padding-top: 8px;
+    }
+    .shop-filters-side-menu-content .shop-filters-title {
+        margin-bottom: 16px;
+    }
+}
+@media only screen and (max-width: 992px) {
+    #sort-view-control1 {
+        display: none;
+    }
+    .shop-items-col.col-6 .organic-swiper-slide-image {
+        height: 300px;
+    }
+    .shop-items-col.col-12 .organic-swiper-slide-wrapper {
+        flex-direction: column;
+        align-items: center;
+        padding-bottom: 32px;
+    }
+    .menu-product-slide-text {
+        width: 90%;
+    }
+    .page-banner {
+        height: 230px;
+    }
+    .shop-banner-slider-wrapper {
+        bottom: -32px;
+    }
+    .page-banner {
+        margin-bottom: 350px;
+    }
+    .shop-items-col.col-12 .organic-swiper-slide-image {
+        max-width: 100%;
+    }
+}
+@media only screen and (max-width: 768px) {
+    .page-banner {
+        background-position: left !important;
+    }
+    .shop-page-banner-slider {
+        max-width: 100%;
+    }
+}
+@media only screen and (max-width: 576px) {
+    .shop-page-banner-slide img {
+        max-width: 150px;
+    }
+    .shop-sort-bar p {
+        display: none;
+    }
+    .shop-items-col.col-6 .organic-swiper-slide-image {
+        height: 160px;
+    }
+    .organic-slide-button {
+        display: none !important;
+    }
+    .organic-swiper-slide-image {
+        margin-bottom: 24px;
+    }
+    .shop-items-col.col-12 .organic-swiper-slide-image {
+        margin-bottom: 0 !important;
+    }
+    .shop-items-col {
+        margin-bottom: 24px;
     }
 }
