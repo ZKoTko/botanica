@@ -566,89 +566,65 @@
         <section class="page-banner" style="background: url(assets/img/nutrition-banner.webp);margin-bottom: 0 !important;">
             <div class="container">
                 <div class="page-banner-title">
-                    <h1 style="text-transform: uppercase;">Wishlist</h1>
+                    <h1 style="text-transform: uppercase;">My account</h1>
                     <div class="page-banner-breadcrumb">
-                        <a href="#">Home</a> <i class="fa-solid fa-angle-right"></i> <span>Wishlist</span>
+                        <a href="#">Home</a> <i class="fa-solid fa-angle-right"></i> <span>My account</span>
                     </div>      
                 </div>
             </div>
         </section>
 
-       <section class="wishlish-section">
-        <div class="container">
-
-            <!--If wishlist empty
-            <div class="wishlish-empty">
-                <p>There are no products on the Wishlist!</p>
-            </div>-->
-
-            <div class="wishlish-items-wrapper">
-                <div class="wishlish-item">                 
-                    <div class="wishlist-item-start">
-                        <div class="wishlish-item-del">
-                            <i class="fa-solid fa-trash-can"></i>
-                        </div>
-                        <div class="wishlish-item-product">
-                            <img src="assets/img/wishlistitem.webp" alt="wishlistitem">
-                            <div class="wishlish-item-product-info">
-                                <a href="#">Alpine Flower Honey</a>
-                                <span>$32.00</span>
-                                <div class="wishlish-item-product-date">
-                                    <i class="fa-solid fa-calendar-days"></i>
-                                    November 20, 2024
+        <section class="myaccount-section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-4">
+                        <div class="myaccount-params-wrapper">
+                            <div class="myaccount-params-title">
+                                My Account
+                            </div>
+                            <div class="myaccount-params-content">
+                                <div class="myaccount-param-item">
+                                    <i class="fa-regular fa-heart"></i>
+                                    <p>Wishlist</p>
+                                </div>
+                                <div class="myaccount-param-item">
+                                    <i class="fa-solid fa-gear"></i>
+                                    <p>Dashboard</p>
+                                </div>
+                                <div class="myaccount-param-item">
+                                    <i class="fa-solid fa-basket-shopping"></i>
+                                    <p>Orders</p>
+                                </div>
+                                <div class="myaccount-param-item">
+                                    <i class="fa-solid fa-cloud-arrow-down"></i>
+                                    <p>Downloads</p>
+                                </div>
+                                <div class="myaccount-param-item">
+                                    <i class="fa-solid fa-house-chimney"></i>
+                                    <p>Addresses</p>
+                                </div>
+                                <div class="myaccount-param-item">
+                                    <i class="fa-regular fa-user"></i>
+                                    <p>Account details</p>
+                                </div>
+                                <div class="myaccount-param-item">
+                                    <i class="fa-solid fa-code-compare"></i>
+                                    <p>Compare</p>
+                                </div>
+                                <div class="myaccount-param-item">
+                                    <i class="fa-solid fa-right-from-bracket"></i>
+                                    <p>Logout</p>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="wishlish-item-end-params">
-                        <div class="wishlish-item-stock">
-                            <i class="fa-regular fa-circle-check"></i>
-                            98 in stock
-                        </div>
-                        <div class="wishlish-item-btn">
-                            Add to cart
-                        </div>
-                    </div>
-                </div>
-                <div class="wishlish-item">                 
-                    <div class="wishlist-item-start">
-                        <div class="wishlish-item-del">
-                            <i class="fa-solid fa-trash-can"></i>
-                        </div>
-                        <div class="wishlish-item-product">
-                            <img src="assets/img/wishlistitem.webp" alt="wishlistitem">
-                            <div class="wishlish-item-product-info">
-                                <a href="#">Alpine Flower Honey</a>
-                                <span>$32.00</span>
-                                <div class="wishlish-item-product-date">
-                                    <i class="fa-solid fa-calendar-days"></i>
-                                    November 20, 2024
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="wishlish-item-end-params">
-                        <div class="wishlish-item-stock">
-                            <i class="fa-regular fa-circle-check"></i>
-                            98 in stock
-                        </div>
-                        <div class="wishlish-item-btn">
-                            Add to cart
-                        </div>
+                    <div class="col-lg-8">
+                        <!--Content here-->
                     </div>
                 </div>
             </div>
-            <div class="wishlist-link-wrapper">
-                <div class="wishlist-input-section-wrapper">
-                    <p>Wishlist link:</p>
-                    <div class="wishlist-input-wrapper">
-                        <input type="text" value="https://botanica.risingbamboo.com/wishlist/MOWGPD">
-                        <button class="wishlist-input-btn">Copy</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-       </section>
+        </section>
+       
 
     </main>
     <footer>
@@ -776,6 +752,36 @@
 
             }); 
     </script>  
-    <script src="assets/js/accordion.js"></script>
+    <script>
+        const accordionItemHeaders = document.querySelectorAll(".accordion-item-header");
+
+        accordionItemHeaders.forEach(accordionItemHeader => {
+        accordionItemHeader.addEventListener("click", event => {
+            
+             
+            
+             const currentlyActiveAccordionItemHeader = document.querySelector(".accordion-item-header.active");
+             if(currentlyActiveAccordionItemHeader && currentlyActiveAccordionItemHeader!==accordionItemHeader) {
+               currentlyActiveAccordionItemHeader.classList.toggle("active");
+               currentlyActiveAccordionItemHeader.nextElementSibling.style.maxHeight = 0;
+             }
+
+            accordionItemHeader.classList.toggle("active");
+            const accordionItemBody = accordionItemHeader.nextElementSibling;
+            if(accordionItemHeader.classList.contains("active")) {
+            accordionItemBody.style.maxHeight = accordionItemBody.scrollHeight + "px";
+            }
+            else {
+            accordionItemBody.style.maxHeight = 0;
+            }
+            
+        });
+        });
+    </script>
+    <script>
+         $('.open-coupon').on('click', function () {
+            $('.cart-coupon-form').toggle();
+        });
+    </script>
   </body>
 </html>
