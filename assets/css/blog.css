@@ -139,6 +139,9 @@
     font-size: 12px;
     width: 100%;
 }
+.nutrition-filters-search-bar-input-wrapper input:focus {
+    border: 0 !important;
+}
 .nutrition-filters-search-bar-input-circle {
     position: absolute;
     right: 6px;
