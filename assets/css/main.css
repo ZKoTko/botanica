@@ -123,6 +123,7 @@ main {
     opacity: 1;
     visibility: visible;
 }
+
 .hidden-element {
     opacity: 0;
 }
