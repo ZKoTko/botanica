@@ -15,7 +15,6 @@
     <link href="assets/css/aos.css" rel="stylesheet">
   </head>
   <body>
-
     <!--Mob Side Menu-->
     <div id="side-menu">
         <div class="side-menu-content">  
@@ -293,6 +292,32 @@
         </a>
     </div>
     <div class="main-popup-filter"></div>
+    <!--Login/Registration popup-->
+    <div class="login-popup">
+        <div class="login-popup-content">
+            <div class="login-popup-close login-popup-close-wrapper">
+                <i class="fa-solid fa-xmark login-popup-close"></i>
+            </div>
+            <div class="login-popup-switch">
+                <div class="login-popup-switch-bar login"></div>
+                <span class="switch-bar-login">Login</span>
+                <span class="switch-bar-register">Register</span>
+            </div>
+            <div class="login-popup-contents">
+                <div class="login-popup-content-inner" id="login-popup-content-inner1">
+                    <div class="login-popup-title">
+                        Insert your account information:
+                    </div>
+                </div>
+                <div class="login-popup-content-inner" id="login-popup-content-inner2">
+                    <div class="login-popup-title">
+                        Create your account:
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="login-popup-filter"></div>
     <header>
         <!--PC Nav-->
         <nav class="main-nav">
@@ -496,7 +521,7 @@
                     </div>
                     <div class="nav-controls">
                         <a href="#">
-                            <div class="nav-button"><i class="fa-regular fa-user"></i></div>
+                            <div class="nav-button login-popup-opener"><i class="fa-regular fa-user login-popup-opener"></i></div>
                         </a>
                         <a href="#">
                             <div class="nav-button">

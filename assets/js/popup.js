@@ -18,14 +18,14 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     };
 
-    // Добавить классы через 2 секунды
+    // Добавить классы через время
     setTimeout(() => {
         popup.classList.add("visible");
         filter.classList.add("visible");
         popupImg.classList.add("visible"); // Добавляем класс visible на изображение
         closeButton.classList.add("visible"); // Добавляем класс visible на кнопку закрытия
         toggleScroll(true);  // Блокируем прокрутку
-    }, 2000);
+    }, 1000);
 
     // Убрать классы при клике на фильтр или кнопку закрытия
     const hidePopup = () => {
@@ -39,3 +39,51 @@ document.addEventListener("DOMContentLoaded", () => {
     filter.addEventListener("click", hidePopup);
     closeButton.addEventListener("click", hidePopup);
 });
+
+
+document.addEventListener('click', (e) => {
+    if (e.target.classList.contains('login-popup-opener')) {
+        document.querySelector('.login-popup').classList.add('visible');
+        document.querySelector('.login-popup-filter').classList.add('visible');
+    } else if (e.target.classList.contains('login-popup-filter') || e.target.classList.contains('login-popup-close')) {
+        document.querySelector('.login-popup').classList.remove('visible');
+        document.querySelector('.login-popup-filter').classList.remove('visible');
+    }
+});
+
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    let switchBar = document.querySelector('.login-popup-switch-bar');
+    
+    if (switchBar.classList.contains('login')) {
+      // Если есть класс .login, показываем первый контент
+      document.querySelector('#login-popup-content-inner1').classList.add('visible');
+      document.querySelector('#login-popup-content-inner2').classList.remove('visible');
+    } else {
+      // Если класс .register, показываем второй контент
+      document.querySelector('#login-popup-content-inner1').classList.remove('visible');
+      document.querySelector('#login-popup-content-inner2').classList.add('visible');
+    }
+  
+    // Обработчик клика на .switch-bar-login
+    document.querySelector('.switch-bar-login').addEventListener('click', function() {
+      switchBar.classList.remove('register'); // Убираем класс .register
+      switchBar.classList.add('login');       // Добавляем класс .login
+  
+      // Управляем видимостью
+      document.querySelector('#login-popup-content-inner1').classList.add('visible');
+      document.querySelector('#login-popup-content-inner2').classList.remove('visible');
+    });
+  
+    // Обработчик клика на .switch-bar-register
+    document.querySelector('.switch-bar-register').addEventListener('click', function() {
+      switchBar.classList.remove('login');   // Убираем класс .login
+      switchBar.classList.add('register');   // Добавляем класс .register
+  
+      // Управляем видимостью
+      document.querySelector('#login-popup-content-inner1').classList.remove('visible');
+      document.querySelector('#login-popup-content-inner2').classList.add('visible');
+    });
+  });
+  
