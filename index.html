@@ -285,6 +285,14 @@
             </div>
         </div>
     </div>
+    <!--Main popup-->
+    <div class="main-popup">
+        <div class="main-popup-close"><i class="fa-solid fa-xmark"></i></div>
+        <a href="#">
+            <img class="main-popup-img" src="assets/img/banner-popup.webp" alt="popup">
+        </a>
+    </div>
+    <div class="main-popup-filter"></div>
     <header>
         <!--PC Nav-->
         <nav class="main-nav">
@@ -1068,9 +1076,21 @@
                             <div class="organic-slide-tooltip3 organic-slide-tooltip">Quick view</div>
                         </div>
                         <div class="organic-swiper-slide-image">
-                                <i class="fa-solid fa-heart"></i>
-                                <img src="assets/img/organic-slide1.webp" alt="organic-slide" class="organic-slide1">
-                                <img src="assets/img/organic-slide2.webp" alt="organic-slide" class="organic-slide2">
+                            <div class="menu-product-slide-img-bar">
+                                <i class="fa-solid fa-bolt-lightning"></i>
+                                <span>-21%</span>
+                            </div>
+                            <i class="fa-solid fa-heart"></i>
+                            <img src="assets/img/organic-slide1.webp" alt="organic-slide" class="organic-slide1">
+                            <img src="assets/img/organic-slide2.webp" alt="organic-slide" class="organic-slide2">
+                            <div class="item-countdown">
+                                <div class="countdown countdown-wrapper" data-target="2025-01-15T12:00:00">
+                                    <div class="item-time"><span class="data-number days">00</span><span class="name-time">Days</span></div>
+                                    <div class="item-time"><span class="data-number hours">00</span><span class="name-time">Hours</span></div>
+                                    <div class="item-time"><span class="data-number minutes">00</span><span class="name-time">Mins</span></div>
+                                    <div class="item-time"><span class="data-number seconds">00</span><span class="name-time">Secs</span></div>
+                                </div>
+                            </div>
                         </div>
                         <div class="menu-product-slide-text">
                             <div class="menu-product-slide-rate">
@@ -2022,21 +2042,21 @@
                     <img src="assets/img/bn-only.webp" alt="sale" class="sale-section-3">
                     <div class="sale-text">
                         <p class="sale-subtitle">hurry up !</p>
-                        <div class="sale-timer-wrapper">
+                        <div class="sale-timer-wrapper countdown-wrapper" data-target="2025-06-31T23:59:59">
                             <div class="sale-timer-item">
-                                <div class="sale-timer-item-circle">224</div>
+                                <div class="sale-timer-item-circle days">00</div>
                                 <p>Days</p>
                             </div>
                             <div class="sale-timer-item">
-                                <div class="sale-timer-item-circle">24</div>
+                                <div class="sale-timer-item-circle hours">00</div>
                                 <p>Hours</p>
                             </div>
                             <div class="sale-timer-item">
-                                <div class="sale-timer-item-circle">24</div>
+                                <div class="sale-timer-item-circle minutes">00</div>
                                 <p>Hours</p>
                             </div>
                             <div class="sale-timer-item">
-                                <div class="sale-timer-item-circle">24</div>
+                                <div class="sale-timer-item-circle seconds">00</div>
                                 <p>Secs</p>
                             </div>
                         </div>
@@ -2280,6 +2300,8 @@
     <script src="assets/js/nav.js"></script>
     <script src="assets/js/aos.js"></script>
     <script src="assets/js/side-menu.js"></script>
+    <script src="assets/js/countdown.js"></script>
+    <script src="assets/js/popup.js"></script>
     <script>
     function observeDOMChanges() {
     // Создаем новый MutationObserver
