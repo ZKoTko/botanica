@@ -16,71 +16,71 @@
     <link rel="stylesheet" href="assets/css/pages-style.css">
   </head>
   <body>
-        <!--Login/Registration popup-->
-        <div class="login-popup">
-            <div class="login-popup-content">
-                <div class="login-popup-close login-popup-close-wrapper">
-                    <i class="fa-solid fa-xmark login-popup-close"></i>
-                </div>
-                <div class="login-popup-switch">
-                    <div class="login-popup-switch-bar login"></div>
-                    <span class="switch-bar-login">Login</span>
-                    <span class="switch-bar-register">Register</span>
-                </div>
-                <div class="login-popup-contents">
-                    <div class="login-popup-content-inner" id="login-popup-content-inner1">
-                        <div class="login-popup-title">
-                            Insert your account information:            
-                        </div>
-                        <form action="#">
-                            <label>Email address <span>*</span></label>
-                            <input type="text" placeholder="Enter your email">
-                            <label>Password <span>*</span></label>
-                            <input type="text" placeholder="Password">
-                            <div class="shop-filter-item-with-checkbox">
-                                <label class="cbx">
-                                    <div class="checkmark">
-                                    <input type="checkbox" id="cbx">
-                                    <div class="flip">
-                                      <div class="front"></div>
-                                        <div class="back">
-                                          <svg viewBox="0 0 16 14" height="14" width="16">
-                                            <path d="M2 8.5L6 12.5L14 1.5"></path>
-                                          </svg>
-                                        </div>
-                                      </div>
+    <!--Login/Registration popup-->
+    <div class="login-popup">
+        <div class="login-popup-content">
+            <div class="login-popup-close login-popup-close-wrapper">
+                <i class="fa-solid fa-xmark login-popup-close"></i>
+            </div>
+            <div class="login-popup-switch">
+                <div class="login-popup-switch-bar login"></div>
+                <span class="switch-bar-login">Login</span>
+                <span class="switch-bar-register">Register</span>
+            </div>
+            <div class="login-popup-contents">
+                <div class="login-popup-content-inner" id="login-popup-content-inner1">
+                    <div class="login-popup-title">
+                        Insert your account information:            
+                    </div>
+                    <form action="#">
+                        <label>Email address <span>*</span></label>
+                        <input type="text" placeholder="Enter your email">
+                        <label>Password <span>*</span></label>
+                        <input type="text" placeholder="Password">
+                        <div class="shop-filter-item-with-checkbox">
+                            <label class="cbx">
+                                <div class="checkmark">
+                                <input type="checkbox" id="cbx">
+                                <div class="flip">
+                                    <div class="front"></div>
+                                    <div class="back">
+                                        <svg viewBox="0 0 16 14" height="14" width="16">
+                                        <path d="M2 8.5L6 12.5L14 1.5"></path>
+                                        </svg>
                                     </div>
-                                </label>
-                                <div class="shop-filter-item-with-checkbox-text">
-                                    Remember me <a href="#">Lost your password?</a>
+                                    </div>
                                 </div>
+                            </label>
+                            <div class="shop-filter-item-with-checkbox-text">
+                                Remember me <a href="#">Lost your password?</a>
                             </div>
-                            <div class="login-popup-form-button" type="submit">
-                                Login
-                            </div>
-                        </form>
-                    </div>
-                    <div class="login-popup-content-inner" id="login-popup-content-inner2">
-                        <div class="login-popup-title">
-                            Create your account:
                         </div>
-                        <form action="#">
-                            <label>Username <span>*</span></label>
-                            <input type="text" placeholder="User name">
-                            <label>Email address <span>*</span></label>
-                            <input type="text" placeholder="Enter your email">
-                            <label>Password <span>*</span></label>
-                            <input type="text" placeholder="Password">
-                            <p class="login-popup-policy">Your personal data will be used to support your experience throughout this website, to manage access to your account, and for other purposes described in our privacy policy.</p>
-                            <div class="login-popup-form-button" type="submit">
-                                Register
-                            </div>
-                        </form>
+                        <div class="login-popup-form-button" type="submit">
+                            Login
+                        </div>
+                    </form>
+                </div>
+                <div class="login-popup-content-inner" id="login-popup-content-inner2">
+                    <div class="login-popup-title">
+                        Create your account:
                     </div>
+                    <form action="#">
+                        <label>Username <span>*</span></label>
+                        <input type="text" placeholder="User name">
+                        <label>Email address <span>*</span></label>
+                        <input type="text" placeholder="Enter your email">
+                        <label>Password <span>*</span></label>
+                        <input type="text" placeholder="Password">
+                        <p class="login-popup-policy">Your personal data will be used to support your experience throughout this website, to manage access to your account, and for other purposes described in our privacy policy.</p>
+                        <div class="login-popup-form-button" type="submit">
+                            Register
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
-        <div class="login-popup-filter"></div>
+    </div>
+    <div class="login-popup-filter"></div>
     <!--Main popup-->
     <div class="main-popup">
         <div class="main-popup-close"><i class="fa-solid fa-xmark"></i></div>
@@ -1009,7 +1009,7 @@
                     </div>
                     <div class="nav-controls">
                         <a href="#">
-                            <div class="nav-button"><i class="fa-regular fa-user"></i></div>
+                            <div class="nav-button login-popup-opener"><i class="fa-regular fa-user login-popup-opener"></i></div>
                         </a>
                         <a href="#">
                             <div class="nav-button">
@@ -1255,31 +1255,21 @@
                                         <div class="accordion-item-body-content">
                                             <div class="range-wrapper">
                                                 <div class="range-value">
-                                                  <div class="range-static-values-wrapper">
-                                                    <span id="min-range">
-                                                        $0.00
-                                                      </span>
-                                                      <span id="max-range">
-                                                        $90.00
-                                                      </span>
-                                                  </div>       
-                                                  <div class="range-changable-values-wrapper">
-                                                    <p>Ranger ($): </p>
-                                                    <div class="range-changable-values-inner">
-                                                        <span id="range1">
-                                                            0
-                                                          </span>
-                                                          -
-                                                          <span id="range2">
-                                                            90
-                                                          </span>
+                                                    <div class="range-static-values-wrapper">
+                                                        <span id="min-range">$0.00</span>
+                                                        <span id="max-range">$90.00</span>
+                                                    </div>       
+                                                    <div class="range-changable-values-wrapper">
+                                                        <p>Ranger ($): </p>
+                                                        <div class="range-changable-values-inner">
+                                                            <span id="range1-2">0</span> - <span id="range2-2">90</span>
+                                                        </div>
                                                     </div>
-                                                  </div>
-                                                  <button class="btn range-filter-btn">Filter</button>
+                                                    <button class="btn range-filter-btn">Filter</button>
                                                 </div>
-                                                  <div class="slider-track"></div>
-                                                  <input type="range" step="9" min="0" max="90" value="0" id="slider-1" oninput="slideOne()">
-                                                  <input type="range" step="9" min="0" max="90" value="90" id="slider-2" oninput="slideTwo()">
+                                                <div class="slider-track-2"></div>
+                                                <input type="range" step="9" min="0" max="90" value="0" id="slider-1-2">
+                                                <input type="range" step="9" min="0" max="90" value="90" id="slider-2-2">
                                             </div>
                                         </div>
                                         </div>
@@ -2356,9 +2346,28 @@
                 </div>
             </div>
         </section>
+       
+        
     </main>
     <footer>
         <div class="container">
+            <div class="footer-bar-wrapper">    
+                <div class="footer-bar-inner">
+                    <div class="footer-bar">
+                        <img src="assets/img/bg-news.webp" class="footer-bar-bg" alt="footer-bg">
+                        <div class="footer-bar-text">
+                            <p>Subscribe Newsletter</p>
+                            <span>Sign up for newsletter to receive special offers
+                                and exclusive news about Botanica products</span>
+                            <img src="assets/img/dash-arrow.webp" class="footer-bar-arrow" alt="footer-arrow">
+                        </div>
+                        <div class="footer-bar-input-wrapper">
+                            <input type="text" placeholder="Enter Your Email">
+                            <button class="footer-bar-btn">Subscribe</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
             <div class="footer-wrapper row">
                 <div class="col-md-6">
                     <img src="assets/img/logo.png" alt="logo" class="footer-logo" data-aos="fade-up" data-aos-duration="2000">
@@ -2485,69 +2494,6 @@
     </script>  
     <script src="assets/js/accordion.js"></script>
     <script>
-        window.onload = function () {
-            initializeRangeSlider(sliderOne, sliderTwo, displayValOne, displayValTwo, sliderTrack, minGap);
-            initializeRangeSlider(sliderOne2, sliderTwo2, displayValOne2, displayValTwo2, sliderTrack2, minGap2);
-        };
-
-        function initializeRangeSlider(slider1, slider2, display1, display2, track, gap) {
-            slideOne(slider1, slider2, display1, gap, track);
-            slideTwo(slider1, slider2, display2, gap, track);
-
-            slider1.addEventListener("input", () => slideOne(slider1, slider2, display1, gap, track));
-            slider2.addEventListener("input", () => slideTwo(slider1, slider2, display2, gap, track));
-        }
-
-        function slideOne(slider1, slider2, display, gap, track) {
-            if (parseInt(slider2.value) - parseInt(slider1.value) <= gap) {
-                slider1.value = parseInt(slider2.value) - gap;
-            }
-            display.textContent = slider1.value;
-            updateTrackBackground(slider1, slider2, track);
-        }
-
-        function slideTwo(slider1, slider2, display, gap, track) {
-            if (parseInt(slider2.value) - parseInt(slider1.value) <= gap) {
-                slider2.value = parseInt(slider1.value) + gap;
-            }
-            display.textContent = slider2.value;
-            updateTrackBackground(slider1, slider2, track);
-        }
-
-        function updateTrackBackground(slider1, slider2, track) {
-            const sliderMax = slider1.max;
-            const percent1 = (slider1.value / sliderMax) * 100;
-            const percent2 = (slider2.value / sliderMax) * 100;
-
-            track.style.background = `
-                linear-gradient(
-                    to right,
-                    #fff ${percent1}%,
-                    #01693a ${percent1}%,
-                    #01693a ${percent2}%,
-                    #fff ${percent2}%
-                )
-            `;
-        }
-
-        // Первый слайдер
-        const sliderOne = document.getElementById("slider-1");
-        const sliderTwo = document.getElementById("slider-2");
-        const displayValOne = document.getElementById("range1");
-        const displayValTwo = document.getElementById("range2");
-        const sliderTrack = document.querySelector(".slider-track");
-        const minGap = 0;
-
-        // Второй слайдер
-        const sliderOne2 = document.getElementById("slider-1-2");
-        const sliderTwo2 = document.getElementById("slider-2-2");
-        const displayValOne2 = document.getElementById("range1-2");
-        const displayValTwo2 = document.getElementById("range2-2");
-        const sliderTrack2 = document.querySelector(".slider-track-2");
-        const minGap2 = 0;
-
-    </script>
-    <script>
     document.addEventListener("DOMContentLoaded", function () {
     const sortButtons = document.querySelectorAll('#sort-view-control1, #sort-view-control2, #sort-view-control3');
     const shopItems = document.querySelectorAll('.shop-items-col');
@@ -2610,6 +2556,69 @@
     // Обновляем состояние при изменении размера окна
     window.addEventListener('resize', applyInitialState);
 });
+    </script>
+    <script>
+    window.onload = function () {
+    initializeRangeSlider(sliderOne, sliderTwo, displayValOne, displayValTwo, sliderTrack, minGap);
+    initializeRangeSlider(sliderOne2, sliderTwo2, displayValOne2, displayValTwo2, sliderTrack2, minGap2);
+};
+
+function initializeRangeSlider(slider1, slider2, display1, display2, track, gap) {
+    slideOne(slider1, slider2, display1, gap, track);
+    slideTwo(slider1, slider2, display2, gap, track);
+
+    slider1.addEventListener("input", () => slideOne(slider1, slider2, display1, gap, track));
+    slider2.addEventListener("input", () => slideTwo(slider1, slider2, display2, gap, track));
+}
+
+function slideOne(slider1, slider2, display, gap, track) {
+    if (parseInt(slider2.value) - parseInt(slider1.value) <= gap) {
+        slider1.value = parseInt(slider2.value) - gap;
+    }
+    display.textContent = slider1.value;
+    updateTrackBackground(slider1, slider2, track);
+}
+
+function slideTwo(slider1, slider2, display, gap, track) {
+    if (parseInt(slider2.value) - parseInt(slider1.value) <= gap) {
+        slider2.value = parseInt(slider1.value) + gap;
+    }
+    display.textContent = slider2.value;
+    updateTrackBackground(slider1, slider2, track);
+}
+
+function updateTrackBackground(slider1, slider2, track) {
+    const sliderMax = slider1.max;
+    const percent1 = (slider1.value / sliderMax) * 100;
+    const percent2 = (slider2.value / sliderMax) * 100;
+
+    track.style.background = `
+        linear-gradient(
+            to right,
+            #fff ${percent1}%,
+            #01693a ${percent1}%,
+            #01693a ${percent2}%,
+            #fff ${percent2}%
+        )
+    `;
+}
+
+// Первый слайдер
+const sliderOne = document.getElementById("slider-1");
+const sliderTwo = document.getElementById("slider-2");
+const displayValOne = document.getElementById("range1");
+const displayValTwo = document.getElementById("range2");
+const sliderTrack = document.querySelector(".slider-track");
+const minGap = 0;
+
+// Второй слайдер
+const sliderOne2 = document.getElementById("slider-1-2");
+const sliderTwo2 = document.getElementById("slider-2-2");
+const displayValOne2 = document.getElementById("range1-2");
+const displayValTwo2 = document.getElementById("range2-2");
+const sliderTrack2 = document.querySelector(".slider-track-2");
+const minGap2 = 0;
+
     </script>
   </body>
 </html>

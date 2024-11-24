@@ -87,3 +87,23 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
   
+document.addEventListener("DOMContentLoaded", () => {
+  const contactBtn = document.querySelector(".faq-contact-btn");
+  const contactPopup = document.querySelector(".contact-popup");
+  const contactFilter = document.querySelector(".contact-popup-filter");
+  const popupClose = document.querySelector(".contact-popup-close");
+
+  // Добавить класс visible
+  contactBtn.addEventListener("click", () => {
+    contactPopup.classList.add("visible");
+    contactFilter.classList.add("visible");
+  });
+
+  // Убрать класс visible
+  [contactFilter, popupClose].forEach((element) =>
+    element.addEventListener("click", () => {
+      contactPopup.classList.remove("visible");
+      contactFilter.classList.remove("visible");
+    })
+  );
+});

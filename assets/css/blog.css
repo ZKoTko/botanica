@@ -1,6 +1,6 @@
 .nutrition-section{
     padding-top: 120px;
-    margin-bottom: 128px;
+    margin-bottom: 208px;
 }
 .nutrition-items-wrapper {
     display: flex;
@@ -594,6 +594,7 @@ input:focus {
 .state-related-posts-section {
     background-color: #f2f2f2;
     padding: 64px 0;
+    padding-bottom: 200px;
 }
 .state-related-posts-section .blog-slide-wrapper {
     background: #ffffff;
@@ -608,13 +609,14 @@ input:focus {
 
 
 
+
 @media only screen and (max-width: 768px) {
     .blog-slide-wrapper {
         width: 100%;
     }
     .nutrition-section {
         padding-top: 64px;
-        margin-bottom: 64px;
+        margin-bottom: 200px;
     }
     .single-blog-reply-form-inputs-wrapper {
         flex-direction: column;

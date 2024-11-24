@@ -152,10 +152,12 @@ main {
     width: 420px;
     max-width: 80%;
     transition: .3s;
+    pointer-events: none;
 }
 .login-popup.visible {
     opacity: 1;
     visibility: visible;
+    pointer-events: unset;
 }
 .login-popup-content {
     position: relative;
@@ -346,6 +348,7 @@ main {
     line-height: 50px;
     transition: .3s;
     font-weight: 700;
+    border: 0;
 }
 .login-popup-form-button:hover {
     color: #fff;
@@ -3114,19 +3117,118 @@ html.no-scroll {
 #closeSearchButton {
     display: none;
 }
-
 .scene {
     width: 100%;
     height: 100%;
 }
 
-
-
-
-
-
-
-
+/* Contact popup */
+.contact-popup-filter {
+    background-color: #000;
+    opacity: 0;
+    visibility: hidden;
+    z-index: 10000;
+    transition: .3s;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    transition: .3s;
+}
+.contact-popup-filter.visible {
+    opacity: 0.5;
+    visibility: visible;
+}
+.contact-popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    z-index: 10001;
+    border-radius: 20px;
+    background-color: #fff;
+    opacity: 0;
+    visibility: hidden;
+    padding: 35px;
+    width: 420px;
+    max-width: 80%;
+    transition: .3s;
+    pointer-events: none;
+}
+.contact-popup.visible {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: unset;
+}
+.contact-popup-content {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+.contact-popup-close-wrapper {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    right: -84px;
+    top: -84px;
+    position: absolute;
+    z-index: 10001;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 50%;
+    transition: .3s;
+}
+.contact-popup-close-wrapper:hover {
+    background-color: rgba(255, 255, 255, 0.5);
+}
+.contact-popup-content {
+    text-align: center;
+}
+.contact-popup-content h2 {
+    font-size: 22px;
+    color: #222222;
+    text-transform: uppercase;
+    font-weight: 800;
+}
+.contact-popup-content p {
+    font-size: 12px;
+    color: #434343;
+}
+.contact-popup-content input {
+    height: 50px;
+    margin-bottom: 10px;
+    width: 100%;
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgb(214, 214, 214);
+    border-image: initial;
+    border-radius: 4px;
+    padding: 0px 22px;
+    outline: none !important;
+    font-size: 11px;
+}
+.contact-popup-content input::placeholder {
+    font-size: 10px;
+    text-transform: uppercase;
+}
+.contact-popup-content textarea {
+    border: 1px solid #d6d6d6;
+    border-radius: 4px;
+    margin-bottom: 20px;
+    max-height: 210px;
+    outline: none !important;
+    padding: 16px 22px;
+    width: 100%;
+    font-size: 11px;
+}
+.contact-popup-content textarea::placeholder {
+    font-size: 10px;
+    text-transform: uppercase;
+}
+.contact-popup-content form {
+    margin-top: 24px;
+}
 
 
 

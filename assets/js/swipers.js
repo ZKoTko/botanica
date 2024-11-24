@@ -10,6 +10,10 @@ var swiper = new Swiper('.organic-swiper', {
       nextEl: '.oranic-swiper-button-next',
       prevEl: '.oranic-swiper-button-prev',
     },
+    pagination: {
+      el: '.swiper-pagination', // Указываем контейнер для точек
+      clickable: true,         // Делаем точки кликабельными
+    },
 });
 
 
@@ -26,4 +30,12 @@ const bestswiper = new Swiper('.bestselling-swiper', {
     nextEl: '.bestselling-swiper-button-next',
     prevEl: '.bestselling-swiper-button-prev',
   }
+});
+
+
+
+var relatedswiper = new Swiper('.related-swiper', {
+  slidesPerView: 'auto',
+  spaceBetween: 10,
+  loop: true
 });

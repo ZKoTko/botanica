@@ -497,6 +497,7 @@ input:focus {
 .product-page-related-section {
     background-color: rgb(229 240 239);
     padding: 110px 0;
+    padding-bottom: 200px;
 }
 .product-page-related-title {
     margin-bottom: 64px;
@@ -727,6 +728,98 @@ input:focus {
     overflow: hidden;
 }
 
+
+
+
+
+
+
+.product-page-related-content {
+    position: relative;
+}
+.bestselling-swiper .slick-dots li button::before {
+    color: #84d814;
+    font-size: 22px;
+    opacity: 1;
+    border: 1px solid transparent;
+    border-radius: 50%;
+    transition: all .1s;
+    line-height: 19px;
+
+}
+.bestselling-swiper .slick-dots li:hover button::before {
+    color: #01693a;
+    font-size: 26px;
+}
+.bestselling-swiper .slick-dots .slick-active button::before {
+    color: #01693a;
+    font-size: 22px;
+    border: 1px solid #01693a;
+    border-radius: 50%;
+}
+.bestselling-swiper .slick-dots .slick-active:hover button::before {
+    color: #01693a;
+    font-size: 22px;
+    border: 1px solid #01693a;
+    border-radius: 50%;
+}
+.bestselling-swiper .slick-dots {
+    bottom: unset;
+    top: 26px;
+}
+
+.swiper-pagination {
+    bottom: unset !important;
+    left: unset !important;
+    right: 0 !important;
+    top: 0 !important;
+    width: fit-content !important;
+    z-index: 1 !important;
+}
+.swiper-pagination-bullet {
+    width: 6px;
+    height: 6px;
+    background-color: #84d814;
+    opacity: 1;
+    margin: 0 8px !important;
+    transition: .3s;
+}
+.swiper-pagination-bullet:hover {
+    transform: scale(1.5) !important;
+    background: #01693a;
+}
+.swiper-pagination-bullet-active {
+   background: #01693a;
+   position: relative;
+}
+.swiper-pagination-bullet-active::before {
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    content: '';
+    border: 1px solid #01693a;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: transparent;
+    border-radius: 50%;
+}
+.swiper-pagination-bullet-active:hover {
+    transform: none !important;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 @media only screen and (max-width: 1300px) {
     main {
         padding-top: 82px;
@@ -760,6 +853,9 @@ input:focus {
     .product-page-comparison-section > .container {
         max-width: 100%;
         padding: 0;
+    }
+    .swiper-pagination {
+        display: none !important;
     }
 }
 @media only screen and (max-width: 768px) {
