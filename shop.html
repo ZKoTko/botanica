@@ -1588,13 +1588,37 @@
                                 </div>
                                 <p>Showing 12 of 63 results</p>
                                 <div class="shop-sort-select-wrapper">
-                                    <select name="sort" id="shop-filter-select">
-                                        <option value="popularity">Sort by popularity</option>
-                                        <option value="popularity">Sort by popularity</option>
-                                        <option value="popularity">Sort by popularity</option>
-                                        <option value="popularity">Sort by popularity</option>
-                                        <option value="popularity">Sort by popularity</option>
-                                    </select>
+                                    <div class="custom-dropdown">
+                                        <select class="custom-select">
+                                          <option value="1">Default sorting</option>
+                                          <option value="2">Sort by popularity</option>
+                                          <option value="3">Sort by popularity</option>
+                                          <option value="4">Sort by popularity</option>
+                                          <option value="5">Sort by popularity</option>
+                                          <option value="6">Sort by popularity</option>
+                                        </select>
+                                        <div class="dropdown-selected">Default sorting</div>
+                                        <div class="dropdown-options">
+                                          <div class="dropdown-item" data-value="1">
+                                            <span class="dropdown-item-circle"></span>
+                                            Default sorting</div>
+                                          <div class="dropdown-item" data-value="2">
+                                            <span class="dropdown-item-circle"></span>
+                                            Sort by popularity</div>
+                                          <div class="dropdown-item" data-value="3">
+                                            <span class="dropdown-item-circle"></span>
+                                            Sort by popularity</div>
+                                          <div class="dropdown-item" data-value="4">
+                                            <span class="dropdown-item-circle"></span>
+                                            Sort by popularity</div>
+                                          <div class="dropdown-item" data-value="5">
+                                            <span class="dropdown-item-circle"></span>
+                                            Sort by popularity</div>
+                                          <div class="dropdown-item" data-value="6">
+                                            <span class="dropdown-item-circle"></span>
+                                            Sort by popularity</div>
+                                        </div>
+                                      </div>                                      
                                 </div>
                             </div>
                             <div class="shop-items-wrapper">
@@ -2493,6 +2517,7 @@
             }); 
     </script>  
     <script src="assets/js/accordion.js"></script>
+    <script src="assets/js/customselect.js"></script>
     <script>
     document.addEventListener("DOMContentLoaded", function () {
     const sortButtons = document.querySelectorAll('#sort-view-control1, #sort-view-control2, #sort-view-control3');
@@ -2559,65 +2584,65 @@
     </script>
     <script>
     window.onload = function () {
-    initializeRangeSlider(sliderOne, sliderTwo, displayValOne, displayValTwo, sliderTrack, minGap);
-    initializeRangeSlider(sliderOne2, sliderTwo2, displayValOne2, displayValTwo2, sliderTrack2, minGap2);
-};
+        initializeRangeSlider(sliderOne, sliderTwo, displayValOne, displayValTwo, sliderTrack, minGap);
+        initializeRangeSlider(sliderOne2, sliderTwo2, displayValOne2, displayValTwo2, sliderTrack2, minGap2);
+    };
 
-function initializeRangeSlider(slider1, slider2, display1, display2, track, gap) {
-    slideOne(slider1, slider2, display1, gap, track);
-    slideTwo(slider1, slider2, display2, gap, track);
+    function initializeRangeSlider(slider1, slider2, display1, display2, track, gap) {
+        slideOne(slider1, slider2, display1, gap, track);
+        slideTwo(slider1, slider2, display2, gap, track);
 
-    slider1.addEventListener("input", () => slideOne(slider1, slider2, display1, gap, track));
-    slider2.addEventListener("input", () => slideTwo(slider1, slider2, display2, gap, track));
-}
-
-function slideOne(slider1, slider2, display, gap, track) {
-    if (parseInt(slider2.value) - parseInt(slider1.value) <= gap) {
-        slider1.value = parseInt(slider2.value) - gap;
+        slider1.addEventListener("input", () => slideOne(slider1, slider2, display1, gap, track));
+        slider2.addEventListener("input", () => slideTwo(slider1, slider2, display2, gap, track));
     }
-    display.textContent = slider1.value;
-    updateTrackBackground(slider1, slider2, track);
-}
 
-function slideTwo(slider1, slider2, display, gap, track) {
-    if (parseInt(slider2.value) - parseInt(slider1.value) <= gap) {
-        slider2.value = parseInt(slider1.value) + gap;
+    function slideOne(slider1, slider2, display, gap, track) {
+        if (parseInt(slider2.value) - parseInt(slider1.value) <= gap) {
+            slider1.value = parseInt(slider2.value) - gap;
+        }
+        display.textContent = slider1.value;
+        updateTrackBackground(slider1, slider2, track);
     }
-    display.textContent = slider2.value;
-    updateTrackBackground(slider1, slider2, track);
-}
 
-function updateTrackBackground(slider1, slider2, track) {
-    const sliderMax = slider1.max;
-    const percent1 = (slider1.value / sliderMax) * 100;
-    const percent2 = (slider2.value / sliderMax) * 100;
+    function slideTwo(slider1, slider2, display, gap, track) {
+        if (parseInt(slider2.value) - parseInt(slider1.value) <= gap) {
+            slider2.value = parseInt(slider1.value) + gap;
+        }
+        display.textContent = slider2.value;
+        updateTrackBackground(slider1, slider2, track);
+    }
 
-    track.style.background = `
-        linear-gradient(
-            to right,
-            #fff ${percent1}%,
-            #01693a ${percent1}%,
-            #01693a ${percent2}%,
-            #fff ${percent2}%
-        )
-    `;
-}
+    function updateTrackBackground(slider1, slider2, track) {
+        const sliderMax = slider1.max;
+        const percent1 = (slider1.value / sliderMax) * 100;
+        const percent2 = (slider2.value / sliderMax) * 100;
 
-// Первый слайдер
-const sliderOne = document.getElementById("slider-1");
-const sliderTwo = document.getElementById("slider-2");
-const displayValOne = document.getElementById("range1");
-const displayValTwo = document.getElementById("range2");
-const sliderTrack = document.querySelector(".slider-track");
-const minGap = 0;
+        track.style.background = `
+            linear-gradient(
+                to right,
+                #fff ${percent1}%,
+                #01693a ${percent1}%,
+                #01693a ${percent2}%,
+                #fff ${percent2}%
+            )
+        `;
+    }
 
-// Второй слайдер
-const sliderOne2 = document.getElementById("slider-1-2");
-const sliderTwo2 = document.getElementById("slider-2-2");
-const displayValOne2 = document.getElementById("range1-2");
-const displayValTwo2 = document.getElementById("range2-2");
-const sliderTrack2 = document.querySelector(".slider-track-2");
-const minGap2 = 0;
+    // Первый слайдер
+    const sliderOne = document.getElementById("slider-1");
+    const sliderTwo = document.getElementById("slider-2");
+    const displayValOne = document.getElementById("range1");
+    const displayValTwo = document.getElementById("range2");
+    const sliderTrack = document.querySelector(".slider-track");
+    const minGap = 0;
+
+    // Второй слайдер
+    const sliderOne2 = document.getElementById("slider-1-2");
+    const sliderTwo2 = document.getElementById("slider-2-2");
+    const displayValOne2 = document.getElementById("range1-2");
+    const displayValTwo2 = document.getElementById("range2-2");
+    const sliderTrack2 = document.querySelector(".slider-track-2");
+    const minGap2 = 0;
 
     </script>
   </body>
