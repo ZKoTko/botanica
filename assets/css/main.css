@@ -429,7 +429,7 @@ main {
     top: 0;
     background-color: #fff;
     transform: translateY(-100%);
-    transition: transform 0.3s ease;
+    transition: 0.3s ease;
     box-shadow: 0 5px 10px 0 #0000000d;
     height: 80px;
 }
@@ -3288,7 +3288,7 @@ html.no-scroll {
         display: none;
     }
     .main-nav-scroll {
-        display: none;
+        display: none !important;
     }
     .banner-section {
         height: 600px;

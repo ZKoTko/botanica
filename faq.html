@@ -647,6 +647,30 @@
         </div>
     </header>
     <main>
+        <div class="nav-bar">
+            <div class="nav-bar-wrapper">
+                <div class="nav-bar-inner">
+                    <div class="nav-bar-item">
+                        <i class="fa-solid fa-phone-volume"></i>
+                        <span>+0123-456-789</span>
+                    </div>
+                    <div class="nav-bar-item">
+                        <i class="fa-solid fa-envelope"></i>
+                        <span>example@domain.com</span>
+                    </div>
+                </div>
+                <div class="nav-bar-inner">
+                    <div class="nav-bar-item">
+                        <i class="fa-solid fa-location-dot"></i>
+                        <span>PO Box 1622 Bamboo Street West</span>
+                    </div>
+                    <div class="nav-bar-item">
+                        <i class="fa-solid fa-truck-fast"></i>
+                        <span>Free shipping for order above</span>
+                    </div>
+                </div>
+            </div>
+        </div>
         <div class="scroll-to-top">
             <i class="fa-solid fa-arrow-up"></i>
         </div>
@@ -915,5 +939,14 @@
 
             }); 
     </script>  
+    <script>
+        window.addEventListener('scroll', function() {
+            if (window.scrollY >= 500) {
+                document.querySelector('.main-nav-scroll').style.height = '86px';
+            } else {
+                document.querySelector('.main-nav-scroll').style.height = ''; // Восстановить исходную высоту
+            }
+        });
+    </script>
   </body>
 </html>
