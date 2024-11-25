@@ -190,3 +190,31 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 
+// Получаем элементы
+const openMenuButton = document.querySelector('.open-account-mob-side');
+const sideMenu = document.querySelector('.mob-account-side-menu');
+const sideMenuFilter = document.querySelector('.mob-account-side-menu-filter');
+const closeMenuButton = document.querySelector('.mob-account-side-menu-close');
+const body = document.body;
+const html = document.documentElement;
+
+// Функция для открытия меню
+function openSideMenu() {
+    sideMenu.classList.add('open');
+    sideMenuFilter.classList.add('visible');
+    body.classList.add('no-scroll');
+    html.classList.add('no-scroll');
+}
+
+// Функция для закрытия меню
+function closeSideMenu() {
+    sideMenu.classList.remove('open');
+    sideMenuFilter.classList.remove('visible');
+    body.classList.remove('no-scroll');
+    html.classList.remove('no-scroll');
+}
+
+// Навешиваем обработчики событий
+openMenuButton.addEventListener('click', openSideMenu);
+closeMenuButton.addEventListener('click', closeSideMenu);
+sideMenuFilter.addEventListener('click', closeSideMenu);

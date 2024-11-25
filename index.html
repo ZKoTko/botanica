@@ -15,6 +15,19 @@
     <link href="assets/css/aos.css" rel="stylesheet">
   </head>
   <body>
+    <!--Mob-account-side-menu-->
+    <div class="mob-account-side-menu">
+        <div class="mob-account-side-menu-content">
+            <div class="mob-account-side-menu-close"><i class="fa-solid fa-xmark"></i></div>
+            <a href="#">My account</a>
+            <a href="#">Order Tracking</a>
+            <a href="#">My Cart</a>
+            <a href="#">Checkout</a>
+            <a href="#">Wishlist</a>
+            <a href="#">Login</a>
+        </div>
+    </div>
+    <div class="mob-account-side-menu-filter"></div>
     <!--Mob Side Menu-->
     <div id="side-menu">
         <div class="side-menu-content">  
@@ -849,7 +862,7 @@
                     <a href="#"><i class="fa-solid fa-heart"></i></a>
                     <span>Wishlist</span>
                 </div>
-                <div class="mob-lower-menu-item">
+                <div class="mob-lower-menu-item open-account-mob-side">
                     <a href="#"><i class="fa-regular fa-user"></i></a>
                     <span>Account</span>
                 </div>
@@ -1673,10 +1686,10 @@
                 <div class="bestselling-title">
                     <h2>Best Selling</h2>
                     <div class="bestselling-nav">
-                        <div class="bestselling-nav-item bestselling-nav-item-active">Vegetable</div>
-                        <div class="bestselling-nav-item">Fruits</div>
-                        <div class="bestselling-nav-item">Drink</div>
-                        <div class="bestselling-nav-item">Meat</div>
+                        <div class="bestselling-nav-item bestselling-nav-item-active" data-category="vegetable">Vegetable</div>
+                        <div class="bestselling-nav-item" data-category="fruits">Fruits</div>
+                        <div class="bestselling-nav-item" data-category="drink">Drink</div>
+                        <div class="bestselling-nav-item" data-category="meat">Meat</div>
                     </div>
                     <div class="bestselling-slider-nav-wrapper">
                         <div class="bestselling-swiper-button-next"></div>
@@ -1722,6 +1735,9 @@
                                 <del>$19.00</del>
                             </div>
                         </div>
+                        </div>
+                        <div class="organic-swiper-slide-wrapper-anim-wrapper">
+
                         </div>
                       </div>
                       <div class="organic-swiper-slide swiper-slide">
@@ -2429,6 +2445,37 @@
 
         var scene4 = document.getElementById('scene4');
         var parallax4 = new Parallax(scene4);
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+    const navItems = document.querySelectorAll('.bestselling-nav-item');
+
+    navItems.forEach((item) => {
+        item.addEventListener('click', function () {
+            // Убираем класс active со всех кнопок
+            navItems.forEach((nav) => nav.classList.remove('bestselling-nav-item-active'));
+
+            // Добавляем active на текущую кнопку
+            this.classList.add('bestselling-nav-item-active');
+
+            // Получаем категорию
+            const category = this.getAttribute('data-category');
+
+            // Вызов функции для обработки выбранной категории
+            handleCategoryChange(category);
+        });
+    });
+
+        // Инициализация для первой категории
+        navItems[0].click();
+
+        function handleCategoryChange(category) {
+            // Здесь будет логика обработки категории
+            // Например, обновление данных слайдов, вызов API, или что угодно.
+        }
+    });
+
+
     </script>
     
   </body>
