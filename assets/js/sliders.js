@@ -8,15 +8,6 @@ $(document).ready(function(){
     });
 });
 
-$(document).ready(function(){
-    $('.banner-slider').slick({
-        dots: true,
-        infinite: true,
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        fade: true
-    });
-});
 
 $(document).ready(function(){
     $('.our-menu-slider').slick({
