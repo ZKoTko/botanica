@@ -2393,23 +2393,40 @@ $(document).ready(function () {
         fade: true
     });
 
+    // Инициализация AOS для всей страницы
+    AOS.init({
+        offset: 120,
+        delay: 0,
+        duration: 400,
+        easing: 'ease',
+        once: false,
+        mirror: false,
+        anchorPlacement: 'top-bottom'
+    });
+
     // Функция для анимации активного слайда
     function animateActiveSlide() {
-        // Убираем анимацию со всех слайдов
+        // Убираем классы анимации у всех элементов на слайдах
         $('.slick-slide [data-aos]').removeClass('aos-animate');
 
-        // Добавляем анимацию только для текущего слайда
+        // Добавляем анимацию только для активного слайда
         $('.slick-active [data-aos]').addClass('aos-animate');
     }
 
-    // Инициализация анимации для первого слайда
+    // Анимация для первого слайда при загрузке
     animateActiveSlide();
 
-    // Обновляем анимацию при переключении слайда
+    // Анимация активного слайда при переключении
     $('.banner-slider').on('afterChange', function () {
         animateActiveSlide();
     });
+
+    // Обновление AOS на всей странице после полной загрузки
+    setTimeout(() => {
+        AOS.refresh();
+    }, 100);
 });
+
 
 
     </script>
