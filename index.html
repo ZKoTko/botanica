@@ -885,9 +885,9 @@
                         <div class="container">
                             <div class="banner-slide-content">
                                 <div class="banner-text">
-                                    <h3>CHEF’S SPECIAL</h3>
-                                    <h2 data-aos="fade-left" data-aos-delay="300">Freshness <br> in every bite</h2>
-                                    <p>Good slogens for food delivery business are the key to attractive the more customers and earn money and especially food.</p>
+                                    <h3 data-aos="fade-left" data-aos-delay="200">CHEF’S SPECIAL</h3>
+                                    <h2 data-aos="fade-left" data-aos-delay="100">Freshness <br> in every bite</h2>
+                                    <p data-aos="fade-left" data-aos-delay="100">Good slogens for food delivery business are the key to attractive the more customers and earn money and especially food.</p>
                                     <a href="#">
                                         <button class="btn banner-btn" data-aos="fade-up" data-aos-delay="300">
                                             <p>Explore now</p>
@@ -912,11 +912,11 @@
                         <div class="container">
                             <div class="banner-slide-content">
                                 <div class="banner-text">
-                                    <h3>Drink with us</h3>
-                                    <h2 data-aos="fade">Organic Raw <br>Fruit Smoothies</h2>
-                                    <p>Choice of Tropical Delight, Creamy Strawberry, Pineapple Island, Blueberry Bliss, Organic Green Kale, Mango, Banana Mango</p>
+                                    <h3 data-aos="fade-left" data-aos-delay="300">Drink with us</h3>
+                                    <h2 data-aos="fade-left" data-aos-delay="200">Organic Raw <br>Fruit Smoothies</h2>
+                                    <p data-aos="fade-left" data-aos-delay="200">Choice of Tropical Delight, Creamy Strawberry, Pineapple Island, Blueberry Bliss, Organic Green Kale, Mango, Banana Mango</p>
                                     <a href="#">
-                                        <button class="btn banner-btn" data-aos="fade">
+                                        <button class="btn banner-btn" data-aos="fade-up" data-aos-delay="300">
                                             <p>Explore now</p>
                                             <div class="banner-btn-circle">
                                                 <i class="fa-solid fa-arrow-right-long"></i>
@@ -939,10 +939,10 @@
                         <div class="container">
                             <div class="banner-slide-content">
                                 <div class="banner-text">
-                                    <h2 data-aos="fade">Vietnamese <br> Sandwich</h2>
-                                    <p>Vietnamese sandwich is made with meat, pate, fried egg and full of pickled vegetables. One of the most vibrant and delicious sandwiches in the world</p>
+                                    <h2 data-aos="fade-left" data-aos-delay="100">Vietnamese <br> Sandwich</h2>
+                                    <p data-aos="fade-left" data-aos-delay="200">Vietnamese sandwich is made with meat, pate, fried egg and full of pickled vegetables. One of the most vibrant and delicious sandwiches in the world</p>
                                     <a href="#">
-                                        <button class="btn banner-btn" data-aos="fade">
+                                        <button class="btn banner-btn" data-aos="fade-up" data-aos-delay="300">
                                             <p>Order now</p>
                                             <div class="banner-btn-circle">
                                                 <i class="fa-solid fa-arrow-right-long"></i>
@@ -2383,7 +2383,7 @@
     <script src="assets/js/countdown.js"></script>
     <script src="assets/js/popup.js"></script>
     <script>
-    $(document).ready(function () {
+$(document).ready(function () {
     // Инициализация Slick Slider
     $('.banner-slider').slick({
         dots: true,
@@ -2393,27 +2393,24 @@
         fade: true
     });
 
-    // Инициализация AOS
-    AOS.init({
-        offset: 120, // отступ (в пикселях) от начальной точки
-        delay: 0, // задержка анимации (0-3000мс, шаг 50мс)
-        duration: 400, // продолжительность анимации (0-3000мс, шаг 50мс)
-        easing: 'ease', // сглаживание анимации
-        once: false, // анимация будет повторяться при скролле назад
-        mirror: false, // элементы не будут анимироваться при скролле мимо них
-        anchorPlacement: 'top-bottom' // триггер анимации в зависимости от позиции элемента
-    });
+    // Функция для анимации активного слайда
+    function animateActiveSlide() {
+        // Убираем анимацию со всех слайдов
+        $('.slick-slide [data-aos]').removeClass('aos-animate');
 
-    // Принудительное обновление AOS сразу после инициализации слайдера
-    setTimeout(() => {
-        AOS.refresh();
-    }, 100);
+        // Добавляем анимацию только для текущего слайда
+        $('.slick-active [data-aos]').addClass('aos-animate');
+    }
 
-    // Повторная инициализация AOS после изменения слайда
+    // Инициализация анимации для первого слайда
+    animateActiveSlide();
+
+    // Обновляем анимацию при переключении слайда
     $('.banner-slider').on('afterChange', function () {
-        AOS.refresh();
+        animateActiveSlide();
     });
 });
+
 
     </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/parallax/3.1.0/parallax.min.js"></script>

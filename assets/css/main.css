@@ -3284,6 +3284,13 @@ html.no-scroll {
     margin-bottom: 16px;
 }
 
+[data-aos] {
+    opacity: 0;
+    transition: opacity 0.2s ease, transform 0.2s ease;
+}
+[data-aos].aos-animate {
+    opacity: 1;
+}
 
 
 
