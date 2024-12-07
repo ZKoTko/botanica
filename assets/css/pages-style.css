@@ -3238,6 +3238,22 @@ input[type="range"]:active::-webkit-slider-thumb{
 .delivery-map-filter-modal-btn:hover {
     background-color: #84d814 !important;
 }
+.mob-delivery-location-switch {
+    display: flex;
+    margin-bottom: 32px;
+}
+.mob-delivery-location-switch-item {
+    padding: 4px 8px;
+    border-radius: 4px;
+    margin-bottom: 24px;
+}
+.mob-delivery-location-switch-item.active {
+    background-color: #ececec;
+}
+
+
+
+
 
 @media only screen and (max-width: 1300px) {
     main {
@@ -3355,7 +3371,7 @@ input[type="range"]:active::-webkit-slider-thumb{
     }
     .delivery-side {
         width: 100%;
-        max-height: 400px;
+        max-height: 410px;
     }
 }
 @media only screen and (max-width: 768px) {

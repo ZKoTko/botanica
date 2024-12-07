@@ -65,6 +65,14 @@
                             <i class="fa-solid fa-location-arrow"></i>
                             <p>Определить мое местоположение</p>
                         </div>
+                        <div class="mob-delivery-location-switch">
+                            <div class="mob-delivery-location-switch-item active">
+                                Карта
+                            </div>
+                            <div class="mob-delivery-location-switch-item">
+                                Список
+                            </div>
+                        </div>
                         <div class="delivery-locations-wrapper">
                             <div class="delivery-location-item">
                                 <i class="fa-solid fa-map-location-dot"></i>
@@ -359,7 +367,30 @@
             filterButton.addEventListener("click", () => {
                 filterModal.classList.toggle("active");
             });
-            });
+        });
+      // Выбираем все элементы с классом .mob-delivery-location-switch-item
+const switchItems = document.querySelectorAll('.mob-delivery-location-switch-item');
+const deliverySide = document.querySelector('.delivery-side'); // Элемент для изменения стиля
+
+// Добавляем обработчик события для каждого элемента
+switchItems.forEach(item => {
+    item.addEventListener('click', () => {
+        // Удаляем класс active у всех элементов
+        switchItems.forEach(el => el.classList.remove('active'));
+        
+        // Добавляем класс active к выбранному элементу
+        item.classList.add('active');
+
+        // Проверяем, активен ли второй элемент
+        if (switchItems[1].classList.contains('active')) {
+            deliverySide.style.maxHeight = 'none';
+        } else {
+            deliverySide.style.maxHeight = '';
+        }
+    });
+});
+
+
     </script>
     <!--Yandex map--> 
     <script>
