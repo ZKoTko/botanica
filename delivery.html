@@ -175,6 +175,86 @@
                             <div class="delivery-map-filter-modal-title">
                                 <p>Фильтры</p><a>Сбросить</a>
                             </div>
+                            <div class="delivery-map-filter-modal-items">
+                                <div class="delivery-map-filter-modal-items-title">
+                                    <span>Службы доставки</span>
+                                </div>
+                                <div class="shop-filter-item-with-checkbox">
+                                    <label class="cbx">
+                                        <div class="checkmark">
+                                        <input type="checkbox" id="cbx">
+                                        <div class="flip">
+                                          <div class="front"></div>
+                                            <div class="back">
+                                              <svg viewBox="0 0 16 14" height="14" width="16">
+                                                <path d="M2 8.5L6 12.5L14 1.5"></path>
+                                              </svg>
+                                            </div>
+                                          </div>
+                                        </div>
+                                    </label>
+                                    <div class="shop-filter-item-with-checkbox-text">
+                                        СДЭК
+                                    </div>
+                                </div>
+                                <div class="shop-filter-item-with-checkbox">
+                                    <label class="cbx">
+                                        <div class="checkmark">
+                                        <input type="checkbox" id="cbx">
+                                        <div class="flip">
+                                          <div class="front"></div>
+                                            <div class="back">
+                                              <svg viewBox="0 0 16 14" height="14" width="16">
+                                                <path d="M2 8.5L6 12.5L14 1.5"></path>
+                                              </svg>
+                                            </div>
+                                          </div>
+                                        </div>
+                                    </label>
+                                    <div class="shop-filter-item-with-checkbox-text">
+                                        Связной
+                                    </div>
+                                </div>
+                                <div class="shop-filter-item-with-checkbox">
+                                    <label class="cbx">
+                                        <div class="checkmark">
+                                        <input type="checkbox" id="cbx">
+                                        <div class="flip">
+                                          <div class="front"></div>
+                                            <div class="back">
+                                              <svg viewBox="0 0 16 14" height="14" width="16">
+                                                <path d="M2 8.5L6 12.5L14 1.5"></path>
+                                              </svg>
+                                            </div>
+                                          </div>
+                                        </div>
+                                    </label>
+                                    <div class="shop-filter-item-with-checkbox-text">
+                                        Почта России
+                                    </div>
+                                </div>
+                                <div class="shop-filter-item-with-checkbox">
+                                    <label class="cbx">
+                                        <div class="checkmark">
+                                        <input type="checkbox" id="cbx">
+                                        <div class="flip">
+                                          <div class="front"></div>
+                                            <div class="back">
+                                              <svg viewBox="0 0 16 14" height="14" width="16">
+                                                <path d="M2 8.5L6 12.5L14 1.5"></path>
+                                              </svg>
+                                            </div>
+                                          </div>
+                                        </div>
+                                    </label>
+                                    <div class="shop-filter-item-with-checkbox-text">
+                                        Пятерочка 5post
+                                    </div>
+                                </div>
+                                <button class="btn delivery-map-filter-modal-btn">
+                                    Применить
+                                </button>
+                            </div>
                         </div>
                     </div>
                     <div id="map1" style="width: 100%; height: 100%;"></div>
@@ -271,6 +351,16 @@
 
             }); 
     </script> 
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const filterButton = document.querySelector(".delivery-map-filter-button");
+            const filterModal = document.querySelector(".delivery-map-filter-modal");
+
+            filterButton.addEventListener("click", () => {
+                filterModal.classList.toggle("active");
+            });
+            });
+    </script>
     <!--Yandex map--> 
     <script>
          ymaps.ready(init);
