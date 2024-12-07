@@ -3539,4 +3539,7 @@ input[type="range"]:active::-webkit-slider-thumb{
     .faq-item {
         width: 49%;
     }
+    .delivery-side-content {
+        padding-bottom: 80px;
+    }
 }
