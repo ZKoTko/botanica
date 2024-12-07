@@ -3183,6 +3183,9 @@ input[type="range"]:active::-webkit-slider-thumb{
     margin-bottom: 0;
     font-weight: 700;
 }
+.delivery-map-filter-modal {
+    display: none;
+}
 
 @media only screen and (max-width: 1300px) {
     main {
